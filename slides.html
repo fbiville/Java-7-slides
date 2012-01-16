@@ -18,6 +18,7 @@
 	<body>
 		<div id="impress">
 			<div class="step slide" data-x="0" data-y="-1500">
+				<img id="logo" src="img/lateralThoughtsLogo.png" width="130px" height="59px" />
 				<h1>What's new in <img src="img/JAVA_logo.png" alt="Java" id="java" title="Java" /> 7?</h1>
 				<p id="subtitle" class="note">(yeah, what's new?)</p>
 			</div>
@@ -39,6 +40,8 @@
 					<li>Fork/join</li>
 				</ol>
 			</div>
+
+			<!--************* P R O J E C T   C O I N *************-->
 
 			<div class="step slide newSection" data-x="0" data-y="750">
 				<img src="img/projectCoin.png" alt="" />
@@ -391,14 +394,55 @@ close is invoked!
 			<div class="step slide" data-x="3750" data-y="2250">
 				<h2>Project coin / Diamonds:after</em></h2>
 				<pre class="brush: java">
-				private final Map&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt; mySuperStructure = new ConcurrentSkipListMap&lt;&gt;();</pre>				
+				private final Map&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt; mySuperStructure = new ConcurrentSkipListMap&lt;&gt;();</pre>
+				<p>The following does <strong>NOT</strong> compile, though:</p>
+				<pre class="brush: java">
+				private final Map&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt; mySuperStructure = new Map&lt;&gt;() {
+					//add methods to implement
+				};</pre>
 			</div>
 			
 
-			<div class="step slide" data-x="5250" data-y="1500">
+			<div class="step slide" data-x="5500" data-y="1500">
 				<h2>Project coin / Match more:before</em></h2>
 				<pre class="brush: java">
-				//TODO</pre>				
+				private enum MonthNames {
+					JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
+				}
+				public void before(String monthName) {
+					switch (Enum.valueOf(MonthNames.class, monthName)) {
+					// okkk, the usual version is: switch (MonthNames.valueOf(monthName)) {
+					case DECEMBER:
+						System.out.println("It's Xmas time!");
+						break;
+					default:
+						System.out.println("Can't wait for Xmas :(");
+					}
+				}</pre>				
+			</div>
+			
+
+			<div class="step slide" data-x="5500" data-y="2250">
+				<h2>Project coin / Match more:after</em></h2>
+				<pre class="brush: java">
+				public void after(String monthName) {
+					switch (monthName.toUpperCase()) {// valueOf also throws a NPE if
+								          // monthName is null - exact same
+								          // behaviour here...
+					case "DECEMBER":
+						System.out.println("It's Xmas time!");
+						break;
+					default:
+						System.out.println("Can't wait for Xmas :(");
+					}
+				}</pre>				
+			</div>
+
+			<!--************* N E W   F I L E S Y S T E M   A P I *************-->
+
+			<div class="step slide newSection" data-x="0" data-y="8000">
+				<img id="xFiles" src="img/xFiles.png" alt="" />
+				<h2><span class="note">(New) </span>Filesystem API</h2>
 			</div>
 
 		</div><!-- END OF SLIDES -->

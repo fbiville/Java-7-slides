@@ -209,33 +209,36 @@ table { border-collapse: collapse; border-spacing: 0; }
    ========================================================================== */
 
 body { font-family:'Trykker', serif; font-size:14pt;}
-.slide { min-height:250px; min-width:500px; padding:20px; border:3px solid black;}
+.slide { min-height:250px; min-width:500px; padding:20px; overflow: auto; border:3px solid black;}
 
 .important { font-weight: bold; text-decoration: underline;}
+.executionError { color:red;}
+.fat { font-size: 22pt; font-weight: bold; color: red; text-align: center; font-variant: small-caps;}
+.note { font-size:10pt;}
+.strike { text-decoration: line-through;}
+
 
 h1 { font-size: 20pt; font-weight: bold; margin-top: 14%;}
-h2 { border-bottom:1px solid black; margin-bottom:8%;}
-
-#java { width:50px; height:66px;}
-.note { font-size:10pt;}
+h2 { border-bottom:1px solid black; padding-left: 150px; padding-top:20px; margin-bottom:0; min-height:70px; white-space:nowrap; background:#ffffff url('../img/lateralThoughtsLogo.png') no-repeat left top;}
 h1, #subtitle { text-align:center;}
+
+#logo { float:left;}
+#java { width:50px; height:66px;}
 
 .newSection { overflow: auto;}
 .newSection h2, .newSection img { float: left;}
-.newSection h2 { margin:100px auto 0 50px; border:0;}
+.newSection h2 { margin:100px auto 0 auto; border:0; background:none; padding:0; width:50%; text-align:center;}
 .newSection img { width:200px; margin:15px 10px 0 20px;}
 
 #projectCoinFocus { margin:5px 0; font-weight: bold;}
 #projectCoinToC { margin:0 auto 0 auto; list-style-type: none; text-align: center; width:400px;}
 #projectCoinToC li { display: inline; font-size:11pt; margin-right:20px;}
 
-.syntaxhighlighter { top:15px; overflow:hidden !important;}/*quickfix*/
+#xFiles { margin-top:45px;}
 
-.executionError { color:red;}
+.syntaxhighlighter { top:15px; overflow:hidden !important; margin-bottom: 50px !important;}/*quickfix*/
 
-.fat { font-size: 22pt; font-weight: bold; color: red; text-align: center; font-variant: small-caps;}
 
-.strike { text-decoration: line-through;}
 
 /* =============================================================================
    Non-semantic helper classes
