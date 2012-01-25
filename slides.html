@@ -27,7 +27,7 @@
 				<h2>Reminder / Some facts</h2>
 				<ul>
 					<li>Java <span class="important"><acronym title="Standard Edition">SE</acronym></span> 7</li>
-					<li>Public release: July 7, 2011</li>
+					<li>Public release: July 7, 2011 (5 years after Java SE 6)</li>
 					<li>Java SE 6 <acronym title="End Of Life">EOL</acronym>: July 2012 <span class="note">(check <a href="http://www.oracle.com/technetwork/java/eol-135779.html">this</a> out)</span></li>					
 				</ul>
 			</div>
@@ -86,7 +86,7 @@ long aBitLong = 0b1010_0001L;</pre>
 			<div id="bond" class="step slide" data-x="-750" data-y="3000">
 				<h2>Project coin / Advanced ASCII art <span class="note">(no compiler was harmed in the making of this slide)</span></h2>
 				<pre class="brush: java">
-		// Courtesy Josh Bloch
+		// Courtesy of Joshua Bloch
 		int bond =
           0000_____________0000________0000000000000000__000000000000000000+
         00000000_________00000000______000000000000000__0000000000000000000+
@@ -143,6 +143,7 @@ long aBitLong = 0b1010_0001L;</pre>
 				<h2>Project coin / Safer try-catch:after</h2>
 				<pre class="brush: java">
 		try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(new File("/tmp/dummy.txt"))); 
+			//or even better: OutputStreamWriter outputStreamWriter = new OutputStreamWriter(Files.newOutputStream(Paths.get("/tmp/dummy.txt")))
 			OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(new FileOutputStream(new File("/tmp/dummy2.txt")))) {
 			outputStreamWriter.append("Bêh");
 			outputStreamWriter2.append("Bêh2");
@@ -443,6 +444,114 @@ close is invoked!
 			<div class="step slide newSection" data-x="0" data-y="8000">
 				<img id="xFiles" src="img/xFiles.png" alt="" />
 				<h2><span class="note">(New) </span>Filesystem API</h2>
+			</div>
+
+			<div class="step slide" data-x="-2500" data-y="9250">
+				<h2>Java.(n)IO / Before</h2>
+				<p>API was seriously limited. It did not evolve much (last big change was in Java SE 1.4 with the introduction of java.nio).</p>
+				<ul>
+					<li>Lack of many basic file operations (copy, move...)</li>
+					<li>Too many (checked) exceptions</li>
+					<li>Too few available file attributes</li>			
+				</ul>				
+			</div>
+
+			<div class="step slide" data-x="-1250" data-y="9250">
+				<h2>New Filesystem API / Now</h2>
+				<ul>
+					<li><a href="http://jcp.org/en/jsr/detail?id=203">JSR 203</a>: open in... 2003!</li>
+					<li>Led by Alan Bateman, contributions of Doug Lea, Google...</li>
+					<li>Description: <em>&ldquo;APIs for filesystem access, scalable asynchronous I/O operations, socket-channel binding and configuration, and multicast datagrams&rdquo;</em>
+				</ul>
+			</div>
+			
+
+			<div class="step slide" data-x="0" data-y="9250">
+				<h2>New Filesystem API / What's new</h2>
+				<dl>
+					<dt>FileSystem/FileStorage</dt>
+						<dd>access to the underlying file system/storage</dd>
+					<dt>Path</dt>
+						<dd>interface modeling a File location</dd>
+					<dt>Files (Paths, FileSystems...)</dt>
+						<dd>helper classes to easily operate on the associated class' objects...</dd>			
+				</dl>
+				<p>Extensible: plug your own FileSystem implementation (see <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/file/spi/package-summary.html">java.nio.file.spi</a>). 
+			</div>
+
+			<div class="step slide" data-x="1750" data-y="9250">
+				<h2>New Filesystem / Massive example: CRUD & Browse <span class="note">(say goodbye to Apache Commons IO)</span></h2>
+				<pre class="brush: java">
+					Files.createFile(Paths.get("/tmp/foo.testlog"));
+					Path logFile = Paths.get("/", "tmp", "..", "tmp", "foo.testlog");
+					assertEquals("/tmp/../tmp/foo.testlog", logFile.toString());
+
+					String logContents = "Hello world!";
+					try (BufferedWriter bufferedWriter = Files.newBufferedWriter(logFile, StandardCharsets.UTF_8, StandardOpenOption.APPEND);) {
+					    bufferedWriter.append(logContents);
+					}
+
+					Path normalizedPath = logFile.normalize();
+					assertEquals("/tmp/foo.testlog", normalizedPath.toString());
+					assertTrue(Files.isSameFile(logFile, normalizedPath));
+
+					Path tempFolder = Paths.get("/tmp");
+					Path logFileAgain = tempFolder.resolve("foo.testlog");
+					assertTrue(Files.isSameFile(logFile, logFileAgain));
+
+					Path copiedLogFile = Paths.get("/var").resolveSibling(tempFolder).resolve("bar.testlog");
+					Files.copy(logFile, copiedLogFile, StandardCopyOption.REPLACE_EXISTING);
+
+					List&lt;String&gt; originalLogLines = Files.readAllLines(logFile, StandardCharsets.UTF_8);
+					List&lt;String&gt; copiedLogLines = Files.readAllLines(copiedLogFile, StandardCharsets.UTF_8);
+					assertEquals(1, originalLogLines.size());
+					assertEquals(originalLogLines.size(), copiedLogLines.size());
+					assertTrue(originalLogLines.containsAll(copiedLogLines));
+					assertEquals(logContents, originalLogLines.get(0));
+
+					Iterator&lt;Path&gt; tmpFileIterator = Files.newDirectoryStream(tempFolder, "*.testlog").iterator();
+					int testLogFileTotal = 0;
+					while (tmpFileIterator.hasNext()) {
+					    Path tmpFile = tmpFileIterator.next();
+					    if (tmpFile.toString().endsWith(".testlog")) {
+						testLogFileTotal++;
+					    }
+					}
+					assertEquals(2, testLogFileTotal);
+
+					Files.delete(Paths.get("/tmp/foo.testlog"));
+					Files.delete(Paths.get("/tmp/bar.testlog"));				
+				</pre>	
+			</div>
+
+			<div class="step slide" data-x="3500" data-y="9250">
+				<h2>New Filesystem / Bonus: filesystem notification</h2>
+				<p>Provides a watch service out of the box (see <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html">WatchService</a> class.)</p>
+				<pre class="brush: java">
+	try (WatchService watchService = FileSystems.getDefault().newWatchService();) {
+	    subtitleTemporaryDestination.register(watchService, ENTRY_CREATE);
+	    while (true) {
+			WatchKey key = watchService.take();
+			for (WatchEvent&lt;?&gt; event : key.pollEvents()) {
+			    if (event.kind() == ENTRY_CREATE) {
+					Path name = (Path) event.context();
+					if (name.toString().endsWith(".zip")) {
+					    try (ZipFile archive = new ZipFile(subtitleTemporaryDestination.resolve(name).toFile())) {
+							Enumeration&lt;? extends ZipEntry&gt; entries = archive.entries();
+							while (entries.hasMoreElements()) {
+							    ZipEntry zippedFile = entries.nextElement();
+							    if (zippedFile.getName().endsWith(".srt")) {
+									Files.copy(archive.getInputStream(zippedFile), finalSubtitleLocation, StandardCopyOption.REPLACE_EXISTING);
+							    }
+							}
+					    }
+					}
+					break;
+			    }
+			}
+	    }
+	}
+				</pre>
 			</div>
 
 		</div><!-- END OF SLIDES -->

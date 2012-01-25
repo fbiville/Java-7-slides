@@ -211,6 +211,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 body { font-family:'Trykker', serif; font-size:14pt;}
 .slide { min-height:250px; min-width:500px; padding:20px; overflow: auto; border:3px solid black;}
 
+dt { font-weight: bold;}
+dd { font-style: italic;}
+
 .important { font-weight: bold; text-decoration: underline;}
 .executionError { color:red;}
 .fat { font-size: 22pt; font-weight: bold; color: red; text-align: center; font-variant: small-caps;}
