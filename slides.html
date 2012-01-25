@@ -17,13 +17,13 @@
 	</head>
 	<body>
 		<div id="impress">
-			<div class="step slide" data-x="0" data-y="-1500">
+			<div class="step slide" data-x="0" data-y="-3000">
 				<img id="logo" src="img/lateralThoughtsLogo.png" width="130px" height="59px" />
 				<h1>What's new in <img src="img/JAVA_logo.png" alt="Java" id="java" title="Java" /> 7?</h1>
 				<p id="subtitle" class="note">(yeah, what's new?)</p>
 			</div>
 
-			<div class="step slide" data-x="0" data-y="-750">
+			<div class="step slide" data-x="0" data-y="-1500">
 				<h2>Reminder / Some facts</h2>
 				<ul>
 					<li>Java <span class="important"><acronym title="Standard Edition">SE</acronym></span> 7</li>
@@ -43,12 +43,12 @@
 
 			<!--************* P R O J E C T   C O I N *************-->
 
-			<div class="step slide newSection" data-x="0" data-y="750">
+			<div class="step slide newSection" data-x="0" data-y="1500">
 				<img src="img/projectCoin.png" alt="" />
 				<h2>Project coin</h2>
 			</div>
 
-			<div class="step slide" data-x="-2250" data-y="1500">
+			<div class="step slide" data-x="-6000" data-y="3000">
 				<h2>Project coin?</h2>
 				<ul>
 					<li>Defined in <a href="http://jcp.org/en/jsr/detail?id=334"><acronym title="Java Specification Request">JSR</acronym> 334</a></li>
@@ -65,7 +65,7 @@
 				</ul>
 			</div>
 
-			<div class="step slide" data-x="-750" data-y="1500">
+			<div class="step slide" data-x="-4500" data-y="3000">
 				<h2>Project coin / ASCII art:before</h2>
 				<pre class="brush: java">
 long sooooooLong = 1297456456544564644L;
@@ -74,7 +74,7 @@ float pi = 3.141592653589793238462643383279230F;
 //long aBitLong = 0b10100001L;//no binary literals before v7 ;)</pre>
 			</div>
 
-			<div class="step slide" data-x="-750" data-y="2250">
+			<div class="step slide" data-x="-3000" data-y="3000">
 				<h2>Project coin / ASCII art:after</h2>
 				<pre class="brush: java">
 long sooooooLong = 1_297_456_456_544_564_644L;
@@ -83,7 +83,7 @@ float pi = 3.141_592_653_589_793_238_462_643_383_279_230F;
 long aBitLong = 0b1010_0001L;</pre>
 			</div>
 
-			<div id="bond" class="step slide" data-x="-750" data-y="3000">
+			<div id="bond" class="step slide" data-x="-1500" data-y="3000">
 				<h2>Project coin / Advanced ASCII art <span class="note">(no compiler was harmed in the making of this slide)</span></h2>
 				<pre class="brush: java">
 		// Courtesy of Joshua Bloch
@@ -102,7 +102,7 @@ long aBitLong = 0b1010_0001L;</pre>
           0000_____________0000________000000007;</pre>
 			</div>
 
-			<div class="step slide" data-x="750" data-y="1500">
+			<div class="step slide" data-x="0" data-y="3000">
 				<h2>Project coin / Safer try-catch:before</h2>
 				<pre class="brush: java">
 		OutputStreamWriter outputStreamWriter = null;
@@ -139,7 +139,7 @@ long aBitLong = 0b1010_0001L;</pre>
 		}</pre>
 			</div>
 
-			<div class="step slide" data-x="750" data-y="2500">
+			<div class="step slide" data-x="1700" data-y="3000">
 				<h2>Project coin / Safer try-catch:after</h2>
 				<pre class="brush: java">
 		try (OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(new File("/tmp/dummy.txt"))); 
@@ -156,7 +156,7 @@ long aBitLong = 0b1010_0001L;</pre>
 		}</pre>
 			</div>
 
-			<div class="step slide" data-x="750" data-y="3250">
+			<div class="step slide" data-x="3200" data-y="3000">
 				<h2>Project coin / Safer try-catch</h2>
 				<ul>
 					<li>a.k.a. &ldquo;try-with-resources&rdquo;</li>
@@ -166,7 +166,7 @@ long aBitLong = 0b1010_0001L;</pre>
 				</ul>				
 			</div>
 
-			<div class="step slide" data-x="750" data-y="4250">
+			<div class="step slide" data-x="4500" data-y="3000">
 				<h2>Project coin / Safer try-catch: about suppressed exceptions</h2>
 				<pre class="brush: java">
 				package net.florent.biville.projectcoin.trywithresources;
@@ -207,7 +207,7 @@ long aBitLong = 0b1010_0001L;</pre>
 				}</pre>	
 			</div>
 
-			<div class="step slide" data-x="750" data-y="5000">
+			<div class="step slide" data-x="6000" data-y="3000">
 				<h2>Project coin / Safer try-catch: about suppressed exceptions</h2>
 				<p>Result:<br/>
 					<pre class="executionError">Exception in thread "main" doSomething is invoked
@@ -219,7 +219,7 @@ java.lang.RuntimeException: >>> CLOSE <<<
 				<p class="fat">Where is <span class="strike">Waldo</span> MySuperException?</p>
 			</div>
 
-			<div class="step slide" data-x="750" data-y="5750">
+			<div class="step slide" data-x="7500" data-y="3000">
 				<h2>Project coin / Safer try-catch: about suppressed exceptions</h2>
 				<pre class="brush: java">
 					public static void main(String... strings) throws Exception {
@@ -248,7 +248,7 @@ java.lang.RuntimeException: >>> CLOSE <<<
 					}</pre>	
 			</div>
 
-			<div class="step slide" data-x="750" data-y="6500">
+			<div class="step slide" data-x="9000" data-y="3000">
 				<h2>Project coin / Safer try-catch: about suppressed exceptions</h2>
 				<p>Result:<br/>
 					<pre class="executionError">doSomething is invoked
@@ -262,7 +262,7 @@ close is invoked!
 				</p>
 			</div>
 
-			<div class="step slide" data-x="750" data-y="7250">
+			<div class="step slide" data-x="10500" data-y="3000">
 				<h2>Project coin / Safer try-catch</h2>
 				<p>And the same result can be achieved with:</p>
 				<pre class="brush: java">
@@ -274,7 +274,7 @@ close is invoked!
 				<p>Do you understand why this is safer now? :)</p>			
 			</div>
 
-			<div class="step slide" data-x="2250" data-y="1500">
+			<div class="step slide" data-x="12000" data-y="3000">
 				<h2>Project coin / Compacter catch:before <span class="note">(don't try this at home!)</span></h2>
 				<pre class="brush: java">
 				public static void main(String... args) {
@@ -304,7 +304,7 @@ close is invoked!
 				}</pre>			
 			</div>
 
-			<div class="step slide" data-x="2250" data-y="2250">
+			<div class="step slide" data-x="13500" data-y="3000">
 				<h2>Project coin / Compacter catch:before... <em>easy!</em></h2>
 				<pre class="brush: java">
 				public static void modifyStringBwahahaha(String string) {
@@ -319,7 +319,7 @@ close is invoked!
 				}</pre>				
 			</div>
 
-			<div class="step slide" data-x="2250" data-y="3000">
+			<div class="step slide" data-x="15000" data-y="3000">
 				<h2>Project coin / Compacter catch:after</em></h2>
 				<pre class="brush: java">
 				public static void modifyStringBwahahaha(String string) {
@@ -334,7 +334,7 @@ close is invoked!
 				}</pre>				
 			</div>
 
-			<div class="step slide" data-x="2250" data-y="3750">
+			<div class="step slide" data-x="16500" data-y="3000">
 				<h2>Project coin / Compacter catch:after</em></h2>
 				<ul>
 					<li>a.k.a. &ldquo;multi-catch&rdquo;</li>
@@ -345,7 +345,7 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="2250" data-y="4500">
+			<div class="step slide" data-x="18000" data-y="3000">
 				<h2>Project coin / Precise rethrow:before</em></h2>
 				<pre class="brush: java">
 				private void doNothing() throws MyException {} //MyException extends Exception
@@ -365,7 +365,7 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="2250" data-y="5250">
+			<div class="step slide" data-x="19500" data-y="3000">
 				<h2>Project coin / Precise rethrow:after</em></h2>
 				<pre class="brush: java">
 				private void doNothing() throws MyException {} //MyException extends Exception
@@ -385,14 +385,14 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="3750" data-y="1500">
+			<div class="step slide" data-x="22000" data-y="3000">
 				<h2>Project coin / Diamonds:before</em></h2>
 				<pre class="brush: java">
 				private final Map&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt; mySuperStructure = new ConcurrentSkipListMap&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt;();</pre>				
 			</div>
 			
 
-			<div class="step slide" data-x="3750" data-y="2250">
+			<div class="step slide" data-x="24500" data-y="3000">
 				<h2>Project coin / Diamonds:after</em></h2>
 				<pre class="brush: java">
 				private final Map&lt;List&lt;Class&lt;Thread&gt;&gt;, Map&lt;Void, Boolean&gt;&gt; mySuperStructure = new ConcurrentSkipListMap&lt;&gt;();</pre>
@@ -404,7 +404,7 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="5500" data-y="1500">
+			<div class="step slide" data-x="26000" data-y="3000">
 				<h2>Project coin / Match more:before</em></h2>
 				<pre class="brush: java">
 				private enum MonthNames {
@@ -423,7 +423,7 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="5500" data-y="2250">
+			<div class="step slide" data-x="27500" data-y="3000">
 				<h2>Project coin / Match more:after</em></h2>
 				<pre class="brush: java">
 				public void after(String monthName) {
@@ -441,12 +441,12 @@ close is invoked!
 
 			<!--************* N E W   F I L E S Y S T E M   A P I *************-->
 
-			<div class="step slide newSection" data-x="0" data-y="8000">
+			<div class="step slide newSection" data-x="0" data-y="4500">
 				<img id="xFiles" src="img/xFiles.png" alt="" />
 				<h2><span class="note">(New) </span>Filesystem API</h2>
 			</div>
 
-			<div class="step slide" data-x="-2500" data-y="9250">
+			<div class="step slide" data-x="-2500" data-y="6000">
 				<h2>Java.(n)IO / Before</h2>
 				<p>API was seriously limited. It did not evolve much (last big change was in Java SE 1.4 with the introduction of java.nio).</p>
 				<ul>
@@ -456,7 +456,7 @@ close is invoked!
 				</ul>				
 			</div>
 
-			<div class="step slide" data-x="-1250" data-y="9250">
+			<div class="step slide" data-x="-1250" data-y="6000">
 				<h2>New Filesystem API / Now</h2>
 				<ul>
 					<li><a href="http://jcp.org/en/jsr/detail?id=203">JSR 203</a>: open in... 2003!</li>
@@ -466,7 +466,7 @@ close is invoked!
 			</div>
 			
 
-			<div class="step slide" data-x="0" data-y="9250">
+			<div class="step slide" data-x="0" data-y="6000">
 				<h2>New Filesystem API / What's new</h2>
 				<dl>
 					<dt>FileSystem/FileStorage</dt>
@@ -479,7 +479,7 @@ close is invoked!
 				<p>Extensible: plug your own FileSystem implementation (see <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/file/spi/package-summary.html">java.nio.file.spi</a>). 
 			</div>
 
-			<div class="step slide" data-x="1750" data-y="9250">
+			<div class="step slide" data-x="1750" data-y="6000">
 				<h2>New Filesystem / Massive example: CRUD & Browse <span class="note">(say goodbye to Apache Commons IO)</span></h2>
 				<pre class="brush: java">
 					Files.createFile(Paths.get("/tmp/foo.testlog"));
@@ -524,7 +524,7 @@ close is invoked!
 				</pre>	
 			</div>
 
-			<div class="step slide" data-x="3500" data-y="9250">
+			<div class="step slide" data-x="3500" data-y="6000">
 				<h2>New Filesystem / Bonus: filesystem notification</h2>
 				<p>Provides a watch service out of the box (see <a href="http://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html">WatchService</a> class.)</p>
 				<pre class="brush: java">
@@ -556,12 +556,12 @@ close is invoked!
 
 			<!--************* F O R K  /  J O I N *************-->
 
-			<div class="step slide newSection" data-x="0" data-y="10000">
+			<div class="step slide newSection" data-x="0" data-y="7500">
 				<img id="forkJoin" src="img/fork.png" alt="" />
 				<h2>Fork/Join</h2>
 			</div>
 
-			<div class="step slide" data-x="-1500" data-y="12000">
+			<div class="step slide" data-x="-1500" data-y="9000">
 				<h2>Concurrency/parallelism: definitions <span class="note">(source: <a href="http://stackoverflow.com/questions/1050222/concurrency-vs-parallelism-what-is-the-difference">StackOverflow</a>)</h2>
 				<dl>
 					<dt>Concurrency</dt>
@@ -574,7 +574,7 @@ close is invoked!
 				</dl>			
 			</div>
 
-			<div class="step slide" data-x="0" data-y="12000">
+			<div class="step slide" data-x="0" data-y="9000">
 				<h2>Concurrency/parallelism: facts</h2>
 				<p>1. Everything goes multi-core (even mobile devices).</p>
 				<p>2. Amdahl's law about parallelism:
@@ -586,7 +586,7 @@ close is invoked!
 				<p class="slideConclusion"><em>Parallelism should be made easier!</em><br /><a href="http://jcp.org/en/jsr/detail?id=166">JSR 166</a> to the rescue <span class="note">again</span>!</p>		
 			</div>
 
-			<div class="step slide" data-x="1500" data-y="12000">
+			<div class="step slide" data-x="1500" data-y="9000">
 				<h2>Concurrency/parallelism in Java: a quick wrap-up</h2>
 				<dl>
 					<dt>java.lang.Thread</dt>
@@ -599,7 +599,7 @@ close is invoked!
 				<p>The two first items make <em>concurrent</em> programming easier. The last one focuses on <em>parallel</em> programming.</p>
 			</div>
 
-			<div class="step slide" data-x="3000" data-y="12000">
+			<div class="step slide" data-x="3000" data-y="9000">
 				<h2>Concurrency/parallelism: java.lang.Thread</h2>
 				<pre class="brush: java">
 				Thread sophisticatedThread = new Thread(new Runnable() {
@@ -613,7 +613,7 @@ close is invoked!
 				System.out.println("I'm first! Or am I?");</pre>
 			</div>
 
-			<div class="step slide" data-x="4500" data-y="12000">
+			<div class="step slide" data-x="4500" data-y="9000">
 				<h2>Concurrency/parallelism: java.util.concurrent.Executor</h2>
 				<pre class="brush: java">
 				private final AtomicInteger count = new AtomicInteger(0);
@@ -635,7 +635,7 @@ close is invoked!
 				threadPool.shutdown();</pre>
 			</div>
 
-			<div class="step slide" data-x="6000" data-y="12000">
+			<div class="step slide" data-x="6000" data-y="9000">
 				<h2>Fork/join: java.util.concurrent.ForkJoinPool</h2>
 				<p><strong>What's provided</strong></p>
 				<ul>
@@ -649,7 +649,7 @@ close is invoked!
 
 			</div>
 
-			<div class="step slide" data-x="7500" data-y="12000">
+			<div class="step slide" data-x="7500" data-y="9000">
 				<h2>Fork/join: java.util.concurrent.ForkJoinPool</h2>
 				<p>2 kinds of tasks</p>
 				<ul>
@@ -659,7 +659,7 @@ close is invoked!
 				<p>In any case, the task logic is defined in <em>compute</em>.
 			</div>
 
-			<div class="step slide" data-x="9000" data-y="12000">
+			<div class="step slide" data-x="9000" data-y="9000">
 				<h2>Fork/join: java.util.concurrent.ForkJoinPool example</h2>
 				<pre class="brush: java">
 				public class FibonacciTask extends RecursiveTask&lt;Integer&gt; {
@@ -700,7 +700,7 @@ close is invoked!
 
 			<!--************* Q U E S T I O N S *************-->
 
-			<div class="step slide newSection" data-x="0" data-y="14000">
+			<div class="step slide newSection" data-x="0" data-y="10500">
 				<img id="forkJoin" src="img/questions.png" alt="" />
 				<h2>END</h2>
 			</div>
