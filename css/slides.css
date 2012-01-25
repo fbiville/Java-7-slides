@@ -211,7 +211,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 body { font-family:'Trykker', serif; font-size:14pt;}
 .slide { min-height:250px; min-width:500px; padding:20px; overflow: auto; border:3px solid black;}
 
-dt { font-weight: bold;}
+dt { font-weight: bold; padding:10px 0 5px 0;}
 dd { font-style: italic;}
 
 .important { font-weight: bold; text-decoration: underline;}
@@ -220,6 +220,8 @@ dd { font-style: italic;}
 .note { font-size:10pt;}
 .strike { text-decoration: line-through;}
 
+.formula { font-size:12pt; text-align:center; display:block; margin:10px 0;}
+.slideConclusion { text-align:right;}
 
 h1 { font-size: 20pt; font-weight: bold; margin-top: 14%;}
 h2 { border-bottom:1px solid black; padding-left: 150px; padding-top:20px; margin-bottom:0; min-height:70px; white-space:nowrap; background:#ffffff url('../img/lateralThoughtsLogo.png') no-repeat left top;}
