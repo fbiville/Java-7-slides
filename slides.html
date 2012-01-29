@@ -583,11 +583,12 @@ close is invoked!
 				<h2>Concurrency/parallelism: facts</h2>
 				<p>1. Everything goes multi-core (even mobile devices).</p>
 				<p>2. Amdahl's law about parallelism:
-				<span class="formula">maximum_performance_gain = 1 / (F + ((1 - F) / N))</span> where 
-				<ul>
-					<li>F: percentage of serial computation</li>
-					<li>N: number of threads</li>
-				</ul></p>
+					<span class="formula">maximum_performance_gain = 1 / (F + ((1 - F) / N))</span> where 
+					<ul>
+						<li>F: percentage of serial computation (typical ex.: for-each)</li>
+						<li>N: number of threads</li>
+					</ul>
+				</p>
 				<p class="slideConclusion"><em>Parallelism should be made easier!</em><br /><a href="http://jcp.org/en/jsr/detail?id=166">JSR 166</a> to the rescue <span class="note">again</span>!</p>		
 			</div>
 
